@@ -1,0 +1,14 @@
+{
+  "name": "clipdrop-backend",
+  "version": "1.0.0",
+  "description": "API de téléchargement vidéo (YouTube, Facebook, Pinterest) via yt-dlp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
