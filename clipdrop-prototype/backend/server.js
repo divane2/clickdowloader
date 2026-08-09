@@ -64,11 +64,13 @@ app.post("/api/download", async (req, res) => {
   if (format === "mp3") {
     args.push("-x", "--audio-format", "mp3", "--audio-quality", "0");
   } else {
-    // mp4 : on plafonne la hauteur à la qualité demandée, on force le merge en mp4
+    // mp4 : on plafonne la hauteur à la qualité demandée, avec plusieurs
+    // niveaux de repli au cas où la plateforme (Facebook/Pinterest) ne
+    // propose pas de flux séparés vidéo+audio dans ce format exact.
     const height = quality;
     args.push(
       "-f",
-      `bestvideo[height<=${height}][ext=mp4]+bestaudio[ext=m4a]/best[height<=${height}]`,
+      `bestvideo[height<=${height}]+bestaudio/best[height<=${height}]/best`,
       "--merge-output-format",
       "mp4"
     );
