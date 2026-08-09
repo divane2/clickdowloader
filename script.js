@@ -1,5 +1,5 @@
 // ===== Configuration =====
-// En local pendant le dev, le backend tourne sur localhost:3000.
+// En local pendant le dev,le backend tourne sur localhost:3000.
 // En prod, remplace par l'URL de ton backend déployé (Railway/Render).
 const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
   ? "http://localhost:3000"
